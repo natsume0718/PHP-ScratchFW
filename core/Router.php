@@ -20,7 +20,7 @@ class Router
     /**
      * compileRoutes
      *
-     * @param  mixed $definitions
+     * @param  array $definitions
      *
      * @return array
      */
@@ -46,6 +46,13 @@ class Router
         return $routes;
     }
 
+    /**
+     * resolve
+     *
+     * @param  string $path_info
+     *
+     * @return mixed
+     */
     public function resolve(string $path_info)
     {
         //先頭にスラッシュがなかった場合追加
