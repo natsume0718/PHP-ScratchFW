@@ -9,7 +9,11 @@ class Router
 
     /**
      * __construct
-     *
+     * 
+     * ['/' => ['controller' => 'home', 'action'=> 'index'] ],
+     * ['/user/edit' =>  ['controller' => 'user', 'action'=> 'edit']
+     * ['/user/:id' =>   ['controller' => 'user', 'action'=> 'show']
+     * 
      * @param  mixed $definitions
      */
     public function __construct(array $definitions)
