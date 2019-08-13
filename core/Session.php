@@ -1,5 +1,7 @@
 <?php
 
+namespace core;
+
 class Session
 {
     protected static $session_started = false;
@@ -24,7 +26,7 @@ class Session
      * @param  mixed $value
      *
      */
-    public function set(string $name, mixed $value)
+    public function set(string $name, $value)
     {
         $_SESSION[$name] = $value;
     }
@@ -37,7 +39,7 @@ class Session
      * @param  mixed $default
      *
      */
-    public function get(string $name, mixed $default = null)
+    public function get(string $name, $default = null)
     {
         return isset($_SESSION[$name]) ? $_SESSION[$name] : $default;
     }
