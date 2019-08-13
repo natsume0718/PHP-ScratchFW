@@ -9,6 +9,14 @@ abstract class DBRepository
         $this->connection = $connection;
     }
 
+    /**
+     * sqlを実行する
+     *
+     * @param  string $sql
+     * @param  array $params
+     *
+     * @return bool
+     */
     public function execute(string $sql, array $params = [])
     {
         $stmt = $this->connection->prepare($sql);
