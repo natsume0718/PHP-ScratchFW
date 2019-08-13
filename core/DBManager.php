@@ -44,11 +44,7 @@ class DBManager
      */
     public function getConnection(string $name = null)
     {
-        if (!$name) {
-            return current($this->connections);
-        }
-
-        return $this->connections[$name];
+        return is_null($name) ? current($this->connections) : $this->connections[$name];
     }
 
     /**

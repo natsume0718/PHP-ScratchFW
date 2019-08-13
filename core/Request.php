@@ -68,11 +68,7 @@ class Request
      */
     public function isSsl()
     {
-        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-            return true;
-        }
-
-        return false;
+        return isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
     }
 
     /**
