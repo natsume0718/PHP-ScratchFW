@@ -177,7 +177,10 @@ abstract class Application
 
             $this->runAction($controller, $action, $params);
         } catch (HttpNotFoundException $e) {
-            //throw $th;
+            $this->render404Page($e);
+        } catch (UnauthorizedActionException $e) {
+            list($controller, $action) = $this->login_action;
+            $this->runAction($controller, $action);
         }
 
         $this->response->send();
@@ -230,7 +233,7 @@ abstract class Application
      *
      * @param Exception $e
      */
-    protected function render404Page(Exception $e)
+    protected function render404Page(HttpNotFoundException $e)
     {
         $this->response->setStatusCode(404, 'Not Found');
         $message = $this->isDebugMode() ? $e->getMessage() : 'Page not found.';
