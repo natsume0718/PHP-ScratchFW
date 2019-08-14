@@ -1,8 +1,10 @@
 <?php
 
-require_once  __DIR__ . '/../core/ClassLoder.php';
+use core\ClassLoader;
 
-$loader = new ClassLoder;
-$loader->register(dirname(__FILE__) . '/core');
-$loader->register(dirname(__FILE__) . '/models');
+require 'core/ClassLoader.php';
+
+$loader = new ClassLoader();
+$loader->registerDir(dirname(__FILE__) . '/core');
+$loader->registerDir(dirname(__FILE__) . '/models');
 $loader->register();
