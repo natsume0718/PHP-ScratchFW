@@ -2,7 +2,7 @@
 
 namespace core;
 
-class ClassLoder
+class ClassLoader
 {
 
     protected $dir;
